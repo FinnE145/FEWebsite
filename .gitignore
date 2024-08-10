@@ -163,3 +163,4 @@ cython_debug/
 .vercel
 .vscode
 *.blend1
+*.code-workspace
