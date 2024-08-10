@@ -12,5 +12,8 @@ def index():
 def testDB():
     return "test db"
 
+def run():
+    app.run()
+
 if __name__ == "__main__":
     app.run()
