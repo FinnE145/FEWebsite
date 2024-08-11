@@ -13,8 +13,5 @@ with open("app.pid", "w") as f:
 def index():
     return render_template("underConstruction.html")
 
-def run():
-    app.run()
-
 if __name__ == "__main__":
-    app.run(port=50000)
+    app.run(port=45600)
