@@ -4,8 +4,31 @@
 
 {% block head %}
     <style>
+        .img-div-xs {
+            background-image: url("{{url_for('static', filename='underConstructionRender240.png')}}");
+        }
+
+        .img-div-sm {
+            background-image: url("{{url_for('static', filename='underConstructionRender540.png')}}");
+        }
+
+        .img-div-md {
+            background-image: url("{{url_for('static', filename='underConstructionRender720.png')}}");
+        }
+
+        .img-div-lg {
+            background-image: url("{{url_for('static', filename='underConstructionRender1080.png')}}");
+        }
+
+        .img-div-xl {
+            background-image: url("{{url_for('static', filename='underConstructionRender1620.png')}}");
+        }
+
+        .img-div-xxl {
+            background-image: url("{{url_for('static', filename='underConstructionRender2160.png')}}");
+        }
+
         .img-div {
-            background-image: url("{{url_for('static', filename='underConstructionRender.png')}}");
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
@@ -22,17 +45,10 @@
 {% endblock %}
 
 {% block content %}
-    <div class="img-div">
-        <!-- <h1 class="text-center">Under Construction!</h1>
-        <div class="row justify-content-center">
-            <div class="col-12 col-sm-10 col-md-8 col-lg-7 col-xl-6 col-xxl-5">
-                <img class="img-fluid" src="{{url_for('static', filename='underConstructionRender.png')}}" alt="Under Construction">
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-9 col-sm-8 col-md-7 col-lg-6 col-xl-4 col-xl-5 col-xxl-4">
-                <p class="text-center">This website is currently being built. (I haven't even made a proper 'under construction' page yet!) Please check back later.</p>
-            </div>
-        </div> -->
-    </div>
+    <div class="img-div img-div-xs d-block d-sm-none"></div>
+    <div class="img-div img-div-sm d-none d-sm-block d-md-none"></div>
+    <div class="img-div img-div-md d-none d-md-block d-lg-none"></div>
+    <div class="img-div img-div-lg d-none d-lg-block d-xl-none"></div>
+    <div class="img-div img-div-xl d-none d-xl-block d-xxl-none"></div>
+    <div class="img-div img-div-xxl d-none d-xxl-block"></div>
 {% endblock %}
