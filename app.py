@@ -7,6 +7,7 @@ print("Running app")
 
 with open("app.pid", "w") as f:
     f.write(str(getpid()))
+    print("PID:", getpid())
 
 @app.route("/")
 def index():
