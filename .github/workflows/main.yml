@@ -39,7 +39,9 @@ jobs:
           source .venv/bin/activate
           pip install -r requirements.txt
           kill $(cat ~/app/app.pid)
-          nohup flask --app ~/app/app.py run -p 45600 &
-          
+          nohup python app.py > nohup.out 2> nohup.err < /dev/null &
+
           echo cat ~/app/app.pid
         EOF
+    - name: Wait for server to start
+      run: sleep 5
