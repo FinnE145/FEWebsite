@@ -164,3 +164,4 @@ cython_debug/
 .vscode
 *.blend1
 *.code-workspace
+*.pid
