@@ -34,9 +34,9 @@ jobs:
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
       run: |
         ssh -o StrictHostKeyChecking=no $REMOTE_USER@$REMOTE_HOST << 'EOF'
-          cd /path/to/your/app
+          cd ~/app
           git pull origin main
-          source venv/bin/activate
+          source .venv/bin/activate
           pip install -r requirements.txt
           kill $(cat ~/app/app.pid)
           flask --app ~/app/app.py run -p 45600
