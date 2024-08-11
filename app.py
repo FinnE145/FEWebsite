@@ -13,10 +13,6 @@ with open("app.pid", "w") as f:
 def index():
     return render_template("underConstruction.html")
 
-@app.route("/testDB")
-def testDB():
-    return "test db"
-
 def run():
     app.run()
 
