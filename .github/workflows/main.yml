@@ -1,25 +1,41 @@
-name: Deployment Workflow
+name: Deploy Flask App
+
 on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
   deploy:
-    name: Deploy
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Set up SSH key
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_DEPLOY_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-      - name: Deploy to server
-        run: |
-          echo "Starting deployment..."
-          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no finn@hackclub.app "cd ~/app && git pull origin main && kill $(cat ~/app/app.pid) && flask --app ~/app/app.py run -p 45600"
-          echo "Deployment completed."
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Deploy via SSH
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+        REMOTE_USER: ${{ secrets.REMOTE_USER }}
+      run: |
+        echo "$SSH_PRIVATE_KEY" > private_key
+        chmod 600 private_key
+        ssh -i private_key -o StrictHostKeyChecking=no $REMOTE_USER@$REMOTE_HOST << 'EOF'
+          cd /path/to/your/app
+          git pull origin main
+          source venv/bin/activate
+          pip install -r requirements.txt
+          kill $(cat ~/app/app.pid)
+          flask --app ~/app/app.py run -p 45600
+        EOF
