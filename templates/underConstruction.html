@@ -5,23 +5,23 @@
 {% block head %}
     <style>
         .img-div-xs {
-            background-image: url("{{url_for('static', filename='underConstructionRender240.png')}}");
-        }
-
-        .img-div-sm {
             background-image: url("{{url_for('static', filename='underConstructionRender540.png')}}");
         }
 
-        .img-div-md {
+        .img-div-sm {
             background-image: url("{{url_for('static', filename='underConstructionRender720.png')}}");
         }
 
-        .img-div-lg {
+        .img-div-md {
             background-image: url("{{url_for('static', filename='underConstructionRender1080.png')}}");
         }
 
-        .img-div-xl {
+        .img-div-lg {
             background-image: url("{{url_for('static', filename='underConstructionRender1620.png')}}");
+        }
+
+        .img-div-xl {
+            background-image: url("{{url_for('static', filename='underConstructionRender2160.png')}}");
         }
 
         .img-div-xxl {
@@ -29,6 +29,7 @@
         }
 
         .img-div {
+            background-image: url("{{url_for('static', filename='underConstructionRenderBlue.png')}}") !important;
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
@@ -39,16 +40,18 @@
         }
 
         body {
-            background-color: #c5c5c5 !important;
+            background-color: #488cc4 !important;
         }
     </style>
 {% endblock %}
 
 {% block content %}
-    <div class="img-div img-div-xs d-block d-sm-none"></div>
-    <div class="img-div img-div-sm d-none d-sm-block d-md-none"></div>
-    <div class="img-div img-div-md d-none d-md-block d-lg-none"></div>
-    <div class="img-div img-div-lg d-none d-lg-block d-xl-none"></div>
-    <div class="img-div img-div-xl d-none d-xl-block d-xxl-none"></div>
-    <div class="img-div img-div-xxl d-none d-xxl-block"></div>
+    <!-- <div data-bs-theme="light">
+        <div class="img-div img-div-xs d-block d-sm-none">xs</div>
+        <div class="img-div img-div-sm d-none d-sm-block d-md-none">sm</div>
+        <div class="img-div img-div-md d-none d-md-block d-lg-none">md</div>
+        <div class="img-div img-div-lg d-none d-lg-block d-xl-none">lg</div>
+        <div class="img-div img-div-xl d-none d-xl-block d-xxl-none">xl</div>
+        <div class="img-div img-div-xxl d-none d-xxl-block">xxl</div>
+    </div> -->
 {% endblock %}
