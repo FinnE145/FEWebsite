@@ -4,32 +4,7 @@
 
 {% block head %}
     <style>
-        .img-div-xs {
-            background-image: url("{{url_for('static', filename='underConstructionRender540.png')}}");
-        }
-
-        .img-div-sm {
-            background-image: url("{{url_for('static', filename='underConstructionRender720.png')}}");
-        }
-
-        .img-div-md {
-            background-image: url("{{url_for('static', filename='underConstructionRender1080.png')}}");
-        }
-
-        .img-div-lg {
-            background-image: url("{{url_for('static', filename='underConstructionRender1620.png')}}");
-        }
-
-        .img-div-xl {
-            background-image: url("{{url_for('static', filename='underConstructionRender2160.png')}}");
-        }
-
-        .img-div-xxl {
-            background-image: url("{{url_for('static', filename='underConstructionRender2160.png')}}");
-        }
-
         .img-div {
-            background-image: url("{{url_for('static', filename='underConstructionRenderBlue.png')}}") !important;
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
@@ -37,6 +12,30 @@
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+        .img-div-xs {
+            background-image: url("{{url_for('static', filename='underConstructionRender600Mobile.png')}}");
+        }
+
+        .img-div-sm {
+            background-image: url("{{url_for('static', filename='underConstructionRender800Mobile.png')}}");
+        }
+
+        .img-div-md {
+            background-image: url("{{url_for('static', filename='underConstructionRender1000Mobile.png')}}");
+        }
+
+        .img-div-lg {
+            background-image: url("{{url_for('static', filename='underConstructionRender1200Mobile.png')}}");
+        }
+
+        .img-div-xl {
+            background-image: url("{{url_for('static', filename='underConstructionRender1400Mobile.png')}}");
+        }
+
+        .img-div-xxl {
+            background-image: url("{{url_for('static', filename='underConstructionRender2160Mobile.png')}}");
         }
 
         body {
