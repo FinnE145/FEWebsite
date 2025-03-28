@@ -1,5 +1,7 @@
 # Personal Website
- 
+
+[![Deploy Flask App](https://github.com/FinnE145/FEWebsite/actions/workflows/main.yml/badge.svg)](https://github.com/FinnE145/FEWebsite/actions/workflows/main.yml)
+
 I have 3D modelled a simple "Under Construction" graphic for my personal website until I get it up and running.
 
 ![Model Final Render](https://github.com/FinnE145/FEWebsite/blob/main/static/underConstructionRender1400.png "Final Render")
