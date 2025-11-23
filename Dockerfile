@@ -12,7 +12,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Expose the Flask port
-EXPOSE 45600
+EXPOSE 5000
 
 # Run the app when container starts
-CMD ["gunicorn", "--bind", "0.0.0.0:45600", "wsgi:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "wsgi:app"]
