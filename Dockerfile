@@ -2,7 +2,7 @@
 FROM python:3.12-slim
 
 # Set working directory
-WORKDIR /app
+WORKDIR /opt/FEWebsite
 
 # Copy requirements and install dependencies
 COPY requirements.txt .
@@ -15,4 +15,4 @@ COPY . .
 EXPOSE 45600
 
 # Run the app when container starts
-CMD ["python", "app.py"]
+CMD ["gunicorn", "--bind", "0.0.0.0:45600", "wsgi:app"]
