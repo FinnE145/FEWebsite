@@ -4,7 +4,7 @@ services:
     container_name: few_web
     ports:
       - "45600:5000"
-    command: ["gunicorn", "--bind", "0.0.0.0:5000", "wsgi:app"]
+    command: ["gunicorn", "--bind", "0.0.0.0:5000",  "--access-logfile", "-", "--error-logfile", "-", "wsgi:app"]
     restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:5000/ || exit 1"]
