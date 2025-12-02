@@ -1,0 +1,13 @@
+services:
+  few:
+    image: few
+    container_name: few_web
+    ports:
+      - "45600:5000"
+    command: ["gunicorn", "--bind", "0.0.0.0:5000", "wsgi:app"]
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:5000/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
