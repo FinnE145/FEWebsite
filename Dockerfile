@@ -2,7 +2,7 @@
 FROM python:3.12-slim
 
 # Set working directory
-WORKDIR /opt/FEWebsite
+WORKDIR ~/FEWebsite
 
 # Copy requirements and install dependencies
 COPY requirements.txt .
