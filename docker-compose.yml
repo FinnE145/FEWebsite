@@ -1,5 +1,6 @@
 services:
   few:
+    build: .
     image: few
     container_name: few_web
     ports:
